@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-        background-color: rgb(237, 255, 237);
+    background-color: rgb(237, 255, 237);
 }
 #left-section, #right-section{
     width: 25%;
@@ -51,4 +51,39 @@
     font: .7em sans-serif;
     border: 2px solid rgb(1, 77, 1);
     border-radius: 1%;
+
+}
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+main section{
+    width: 90%;
+    background-color: bisque;
+    height: 70vh;
+}
+main section #results .result{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: green;
+    color: white;
+    border-bottom:1px solid white ;
+}
+main section #results .result img{
+    width: 50px;
+    padding: 5px;
+}
+main section #results .result button{
+    width: 35px;
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 5px;
+    font-size: .9em;
+}
+.full-text{
+    text-decoration: line-through;
 }
