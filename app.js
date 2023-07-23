@@ -18,6 +18,7 @@ function GetValue() {
     let isFull = "empty";
     resultLi.classList.add("result");
     counter++;
+    localStorage.setItem(`counter`, JSON.stringify(counter));
     console.log("getvalue"+counter);
     resultLi.id = counter;
     localStorage.setItem(`todoInput${counter}`, JSON.stringify(todoInput));
