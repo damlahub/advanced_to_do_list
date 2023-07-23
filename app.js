@@ -12,12 +12,11 @@ function EventListeners() {
 function ToDoAdd(e) {
   e.preventDefault();
   GetValue();
+  todoInput.value="";
 }
 function GetValue() {
   let todoInput = document.querySelector("#todoInput").value.trim();
   let resultLi = document.createElement("li");
-  let isFull = "empty";
-  resultLi.value = " ";
   resultLi.classList.add("result");
   counter++;
   console.log("getvalue" + counter);
@@ -27,7 +26,6 @@ function GetValue() {
   console.log(resultLi);
   if (todoInput) {
     resultLi.innerHTML = `
-    <button type="button" class="done"><img src="Images/${isFull}.png"></button>
     <p>${JSON.parse(localStorage.getItem(`todoInput${counter}`))}</p>
     <button type="button" class="btn-remove" data-id="${counter}">X</button>
   `;
@@ -41,6 +39,12 @@ function GetValue() {
   //will be deleted
   let removeBtn = resultLi.querySelector(".btn-remove");
   removeBtn.addEventListener("click", ToDoRemove);
+
+  let todoText = resultLi.querySelector(`p`);
+  todoText.id=counter;
+  todoText.addEventListener("click", function () {
+    this.classList.toggle("full-text");
+  });
 }
 function LoadTodosFromLocalStorage() {
   for (counter = 1; counter <= localStorage.length; counter++) {
@@ -52,7 +56,6 @@ function LoadTodosFromLocalStorage() {
       resultLi.id = counter;
       console.log("yinelle" + resultLi.id);
       resultLi.innerHTML = `
-          <button type="button" class="done"><img src="Images/${isFull}.png"></button>
           <p>${todoInput}</p>
           <button type="button" class="btn-remove" data-id="${counter}">X</button>
         `;
@@ -60,6 +63,7 @@ function LoadTodosFromLocalStorage() {
       //will be deleted
       let removeBtn = resultLi.querySelector(".btn-remove");
       removeBtn.addEventListener("click", ToDoRemove);
+
     }
   }
 }

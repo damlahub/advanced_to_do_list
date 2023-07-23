@@ -69,7 +69,6 @@ main{
 }
 main section{
     width: 90%;
-    background-color: bisque;
     height: 70vh;
 }
 main section #results .result{
@@ -81,9 +80,9 @@ main section #results .result{
     color: white;
     border-bottom:1px solid white ;
 }
-main section #results .result img{
-    width: 50px;
-    padding: 5px;
+main section #results .result p{
+    padding: 15px;
+    font-size: 1em;
 }
 main section #results .result button{
     width: 35px;
